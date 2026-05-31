@@ -71,6 +71,46 @@ export default function Home() {
           <div className="vignette" />
         </>
       )}
+
+      {/* Global animated gradient background for Engineer mode */}
+      {mode === 'engineer' && (
+        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 bg-background" />
+          <div className="gradient-mesh" />
+          <div
+            className="gradient-mesh-orb"
+            style={{
+              width: '50vw',
+              height: '50vw',
+              maxWidth: '600px',
+              maxHeight: '600px',
+              background: 'var(--hero-gradient-1)',
+              opacity: 0.15,
+              top: '10%',
+              left: '20%',
+              animationDelay: '-2s',
+              animationDuration: '12s',
+            }}
+          />
+          <div
+            className="gradient-mesh-orb"
+            style={{
+              width: '40vw',
+              height: '40vw',
+              maxWidth: '500px',
+              maxHeight: '500px',
+              background: 'var(--hero-gradient-2)',
+              opacity: 0.12,
+              bottom: '10%',
+              right: '10%',
+              animationDelay: '-6s',
+              animationDuration: '14s',
+            }}
+          />
+          {/* Subtle dot grid overlay for texture globally */}
+          <div className="absolute inset-0 dot-grid opacity-30" />
+        </div>
+      )}
     </div>
   );
 }

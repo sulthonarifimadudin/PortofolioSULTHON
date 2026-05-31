@@ -47,7 +47,7 @@ export function ProjectsIoT() {
                     {/* Dotted background */}
                     <div className="absolute inset-0 dot-grid rounded-2xl" />
 
-                    <div className="glass relative h-full rounded-2xl flex flex-col overflow-hidden group-hover:border-primary/50 transition-colors">
+                    <div className="relative h-full rounded-2xl flex flex-col overflow-hidden border border-primary-foreground/20 group-hover:border-primary-foreground/50 transition-all duration-300 bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/40">
                     {/* Project Image Thumbnail */}
                     <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 border-b border-border/50">
                       {project.image ? (
@@ -67,8 +67,8 @@ export function ProjectsIoT() {
                     </div>
 
                     <div className="p-6 flex flex-col flex-1 relative z-10">
-                      <h3 className="mb-2 text-lg font-bold group-hover:text-primary transition-colors">{project.title}</h3>
-                      <p className="mb-4 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                      <h3 className="mb-2 text-lg font-bold group-hover:text-white transition-colors">{project.title}</h3>
+                      <p className="mb-4 text-sm leading-relaxed text-primary-foreground/80 line-clamp-3">
                         {project.description}
                       </p>
 
@@ -76,14 +76,14 @@ export function ProjectsIoT() {
                         {project.tech.slice(0, 4).map((t) => (
                           <span
                             key={t}
-                            className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary"
+                            className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/20 px-2.5 py-1 text-xs font-medium text-white shadow-sm"
                           >
                             <TechIcon name={t} size={14} className="opacity-100" />
                             <span>{t}</span>
                           </span>
                         ))}
                         {project.tech.length > 4 && (
-                          <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary">
+                          <span className="inline-flex items-center rounded-full border border-white/30 bg-white/20 px-2.5 py-1 text-xs font-medium text-white shadow-sm">
                             +{project.tech.length - 4}
                           </span>
                         )}

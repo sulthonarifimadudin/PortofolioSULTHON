@@ -62,7 +62,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {/* Page Content */}
+        <div className="relative z-0 flex flex-col flex-1">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

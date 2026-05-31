@@ -38,25 +38,28 @@ export function ProjectsSoftware() {
             <StaggerItem key={project.title} className="break-inside-avoid mb-6">
               <Sheet>
                 <SheetTrigger className="block text-left h-full w-full">
-                  <div className="glass group cursor-pointer overflow-hidden rounded-2xl hover-lift h-full flex flex-col border border-border/50 shadow-sm">
+                  <div className={cn(
+                    "glass group cursor-pointer overflow-hidden rounded-2xl hover-lift h-full flex border border-border/50 shadow-sm",
+                    project.isPortrait ? "flex-row items-stretch min-h-[400px]" : "flex-col"
+                  )}>
                     {/* Project Image Thumbnail */}
                     <div className={cn(
-                      "relative w-full overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 border-b border-border/50",
-                      project.isPortrait ? "h-auto" : "aspect-video"
+                      "relative overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 border-border/50 shrink-0",
+                      project.isPortrait ? "w-2/5 sm:w-[45%] border-r" : "w-full border-b aspect-video"
                     )}>
                       {project.image ? (
                         <img 
                           src={project.image} 
                           alt={project.title}
                           className={cn(
-                            "w-full transition-transform duration-500 group-hover:scale-110 block",
-                            project.isPortrait ? "h-auto" : "h-full object-cover"
+                            "transition-transform duration-500 group-hover:scale-110 block",
+                            project.isPortrait ? "absolute inset-0 w-full h-full object-cover" : "w-full h-full object-cover"
                           )}
                         />
                       ) : (
                         <div className={cn(
                           "absolute inset-0 flex items-center justify-center",
-                          project.isPortrait ? "aspect-[9/16] relative" : "absolute inset-0"
+                          project.isPortrait ? "" : "absolute inset-0"
                         )}>
                           <span className="text-4xl opacity-20">💻</span>
                         </div>
@@ -65,7 +68,10 @@ export function ProjectsSoftware() {
 
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="mb-2 text-lg font-bold group-hover:text-primary transition-colors">{project.title}</h3>
-                      <p className="mb-4 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                      <p className={cn(
+                        "mb-4 text-sm leading-relaxed text-muted-foreground",
+                        project.isPortrait ? "line-clamp-none" : "line-clamp-3"
+                      )}>
                         {project.description}
                       </p>
 

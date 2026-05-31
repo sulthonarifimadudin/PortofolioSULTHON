@@ -11,36 +11,6 @@ export function HeroEngineer() {
 
   return (
     <SectionWrapper className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated gradient mesh background */}
-      <div className="gradient-mesh" />
-      <div
-        className="gradient-mesh-orb"
-        style={{
-          width: '400px',
-          height: '400px',
-          background: 'oklch(0.623 0.214 259.815 / 0.15)',
-          top: '20%',
-          left: '30%',
-          animationDelay: '-2s',
-          animationDuration: '12s',
-        }}
-      />
-      <div
-        className="gradient-mesh-orb"
-        style={{
-          width: '300px',
-          height: '300px',
-          background: 'oklch(0.541 0.281 293.009 / 0.12)',
-          bottom: '20%',
-          right: '20%',
-          animationDelay: '-6s',
-          animationDuration: '14s',
-        }}
-      />
-
-      {/* Dot grid overlay */}
-      <div className="absolute inset-0 dot-grid opacity-40" />
-
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-24 lg:pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">

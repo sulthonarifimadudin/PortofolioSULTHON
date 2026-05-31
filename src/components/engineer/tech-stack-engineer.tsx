@@ -45,16 +45,15 @@ export function TechStackEngineer() {
           </h2>
         </div>
 
-        <div className="relative flex flex-col gap-5 max-w-6xl mx-auto mt-8">
+        <div 
+          className="relative flex flex-col gap-5 max-w-6xl mx-auto mt-8"
+          style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
+        >
           {/* Top Marquee */}
           <MarqueeRow items={row1} />
 
           {/* Bottom Marquee */}
           <MarqueeRow items={row2} reverse={true} />
-          
-          {/* Gradient overlays */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-background to-transparent z-10" />
         </div>
       </div>
     </SectionWrapper>
