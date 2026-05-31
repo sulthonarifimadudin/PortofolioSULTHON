@@ -6,9 +6,9 @@ import { Code2, Cpu, Globe, Coffee } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 
 const stats = [
-  { icon: Code2, value: '50+', label: 'Projects Built' },
-  { icon: Globe, value: '3+', label: 'Years Experience' },
-  { icon: Cpu, value: '15+', label: 'IoT Prototypes' },
+  { icon: Code2, value: '10+', label: 'Projects Built' },
+  { icon: Globe, value: '2x', label: 'Internships' },
+  { icon: Cpu, value: '4+', label: 'IoT Prototypes' },
   { icon: Coffee, value: '∞', label: 'Coffee Consumed' },
 ];
 
@@ -19,7 +19,7 @@ export function AboutEngineer() {
     if (lang === 'en') return label;
     switch(label) {
       case 'Projects Built': return 'Proyek Dibuat';
-      case 'Years Experience': return 'Tahun Pengalaman';
+      case 'Internships': return 'Pengalaman Magang';
       case 'IoT Prototypes': return 'Prototipe IoT';
       case 'Coffee Consumed': return 'Kopi Diminum';
       default: return label;

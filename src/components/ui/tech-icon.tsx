@@ -1,4 +1,4 @@
-import { SiNextdotjs, SiReact, SiVuedotjs, SiNodedotjs, SiSupabase, SiDocker, SiRaspberrypi, SiFigma, SiPostgresql, SiVercel, SiFirebase, SiTypescript, SiTailwindcss, SiAndroidstudio, SiVite, SiFramer, SiLeaflet, SiSocketdotio, SiMysql, SiGooglegemini, SiChartdotjs, SiReactrouter, SiReactquery, SiCapacitor, SiFfmpeg, SiCss, SiArduino, SiCplusplus } from 'react-icons/si';
+import { SiNextdotjs, SiReact, SiVuedotjs, SiNodedotjs, SiSupabase, SiDocker, SiRaspberrypi, SiFigma, SiPostgresql, SiVercel, SiFirebase, SiTypescript, SiTailwindcss, SiAndroidstudio, SiVite, SiFramer, SiLeaflet, SiSocketdotio, SiMysql, SiGooglegemini, SiChartdotjs, SiReactrouter, SiReactquery, SiCapacitor, SiFfmpeg, SiCss, SiArduino, SiCplusplus, SiPostman, SiPython, SiDjango, SiKalilinux, SiGoogle } from 'react-icons/si';
 import { TbBrandVscode } from 'react-icons/tb';
 import { ScanEye, Rocket } from 'lucide-react';
 
@@ -33,7 +33,7 @@ export function TechIcon({ name, size = 32, className = "opacity-80" }: TechIcon
   if (name === 'Framer Motion') return <SiFramer {...iconProps} color="#0055FF" />;
   if (name === 'Leaflet') return <SiLeaflet {...iconProps} color="#199900" />;
   if (name === 'Socket.io') return <SiSocketdotio {...iconProps} color="#010101" />;
-  if (name === 'MySQL') return <SiMysql {...iconProps} color="#4479A1" />;
+  if (name === 'MySQL' || name === 'SQL') return <SiMysql {...iconProps} color="#4479A1" />;
   if (name === 'Gemini AI') return <SiGooglegemini {...iconProps} color="#8E75B2" />;
   if (name === 'Chart.js') return <SiChartdotjs {...iconProps} color="#FF6384" />;
   if (name === 'React Router') return <SiReactrouter {...iconProps} color="#CA4245" />;
@@ -42,6 +42,11 @@ export function TechIcon({ name, size = 32, className = "opacity-80" }: TechIcon
   if (name === 'FFmpeg') return <SiFfmpeg {...iconProps} color="#007808" />;
   if (name === 'Vanilla CSS') return <SiCss {...iconProps} color="#1572B6" />;
   if (name === 'C++') return <SiCplusplus {...iconProps} color="#00599C" />;
+  if (name === 'Postman') return <SiPostman {...iconProps} color="#FF6C37" />;
+  if (name === 'Python') return <SiPython {...iconProps} color="#3776AB" />;
+  if (name === 'Django') return <SiDjango {...iconProps} color="#092E20" />;
+  if (name === 'Kali Linux') return <SiKalilinux {...iconProps} color="#557C94" />;
+  if (name === 'Google') return <SiGoogle {...iconProps} color="#4285F4" />;
 
   return <span style={{ fontSize: size }}>💻</span>;
 }

@@ -37,6 +37,8 @@ export interface Certificate {
   date: string;
   credentialId?: string;
   link?: string;
+  image?: string;
+  tech?: string;
 }
 
 export const getSkills = (lang: 'en' | 'id'): Skill[] => [
@@ -84,7 +86,6 @@ export const getSoftwareProjects = (lang: 'en' | 'id'): Project[] => [
     image: '/FOTO2/ENGINEER/Foto Tumbnail/Este Finance_00-00-12.jpg',
     video: '/videos/ENGINER/Este Finance.mp4',
     github: 'https://github.com/sulthonarifimadudin/EsteFinance',
-    live: '#',
     featured: true,
     isPortrait: true,
   },
@@ -95,7 +96,6 @@ export const getSoftwareProjects = (lang: 'en' | 'id'): Project[] => [
     image: '/FOTO2/ENGINEER/Foto Tumbnail/Digital Invitation Wedding_00-00-03.jpg',
     video: '/videos/ENGINER/Digital Invitation Wedding.mp4',
     github: 'https://github.com/sulthonarifimadudin/Undangan-Pernikahan-Fahmi-Shelsy',
-    live: '#',
     featured: true,
   },
   {
@@ -114,7 +114,6 @@ export const getSoftwareProjects = (lang: 'en' | 'id'): Project[] => [
     image: '/FOTO2/ENGINEER/Foto Tumbnail/Este Run_00-00-15.jpg',
     video: '/videos/ENGINER/Este Run.mp4',
     github: 'https://github.com/sulthonarifimadudin/Este.RUN',
-    live: '#',
     featured: true,
     isPortrait: true,
   },
@@ -141,8 +140,8 @@ export const getSoftwareProjects = (lang: 'en' | 'id'): Project[] => [
 export const getIotProjects = (lang: 'en' | 'id'): Project[] => [
   {
     title: 'Pendingin Otomatis Berbasis PID',
-    description: lang === 'id' ? 'Sistem pendingin otomatis menggunakan kontroler PID untuk menstabilkan suhu secara presisi. Dilengkapi dengan sensor suhu dan kipas aktuator.' : 'Automatic cooling system using a PID controller to stabilize temperature precisely. Equipped with a temperature sensor and actuator fan.',
-    tech: ['Arduino', 'C++', 'PID Controller'],
+    description: lang === 'id' ? 'Sistem pendingin otomatis menggunakan kendali PID untuk menstabilkan suhu secara presisi. Dilengkapi dengan sensor suhu dan aktuator kipas.' : 'Automatic cooling system using a PID controller to stabilize temperature precisely. Equipped with a temperature sensor and actuator fan.',
+    tech: ['Arduino', 'C++', 'PID Controller', 'LM35 Sensor', 'DC Fan'],
     image: '/FOTO2/ENGINEER/Foto Tumbnail/Pendingin Otomatis dengan sensor suhu Berbasis PID.jpg',
     github: '#',
     featured: true,
@@ -150,7 +149,7 @@ export const getIotProjects = (lang: 'en' | 'id'): Project[] => [
   {
     title: 'Tong Sampah Pintar Otomatis',
     description: lang === 'id' ? 'Tong sampah otomatis yang dapat membuka tutupnya sendiri ketika mendeteksi keberadaan tangan atau benda menggunakan sensor ultrasonik.' : 'Automatic smart trash can that opens its lid automatically when it detects the presence of hands or objects using an ultrasonic sensor.',
-    tech: ['Arduino', 'C++', 'Ultrasonic Sensor'],
+    tech: ['Arduino', 'C++', 'Ultrasonic Sensor', 'Servo Motor'],
     image: '/FOTO2/ENGINEER/Foto Tumbnail/Tong Sampah Otomatis.jpg',
     github: '#',
     featured: true,
@@ -158,7 +157,7 @@ export const getIotProjects = (lang: 'en' | 'id'): Project[] => [
   {
     title: 'Body Worn Camera (Hardware)',
     description: lang === 'id' ? 'Perangkat keras Body Worn Camera yang dirancang untuk merekam video dan audio secara portabel, dilengkapi dengan modul transmisi data untuk live streaming.' : 'Body Worn Camera hardware designed for portable video and audio recording, equipped with a data transmission module for live streaming.',
-    tech: ['Raspberry Pi', 'Camera Module', 'C++'],
+    tech: ['Raspberry Pi', 'Python', 'Camera Module', 'Neo-6M GPS'],
     image: '/FOTO2/ENGINEER/Foto Tumbnail/BODY WORN CAMERA (1).png',
     github: '#',
     featured: true,
@@ -167,57 +166,66 @@ export const getIotProjects = (lang: 'en' | 'id'): Project[] => [
 
 export const getExperiences = (lang: 'en' | 'id'): Experience[] => [
   {
-    company: 'Tech Solutions Inc.',
-    role: lang === 'id' ? 'Pengembang Full Stack' : 'Full Stack Developer',
-    period: lang === 'id' ? '2024 — Sekarang' : '2024 — Present',
-    description: lang === 'id' ? 'Memimpin pengembangan aplikasi web berskala besar menggunakan Next.js dan Golang. Menerapkan arsitektur microservices dan pipeline CI/CD.' : 'Leading the development of scalable web applications using Next.js and Golang. Implementing microservices architecture and CI/CD pipelines.',
-    tech: ['Next.js', 'Golang', 'Docker', 'PostgreSQL'],
+    company: 'ProCodeCG (Bandung)',
+    role: lang === 'id' ? 'Intern Software Engineer' : 'Software Engineer Intern',
+    period: '2026',
+    description: lang === 'id'
+      ? 'Membuat dan mengembangkan berbagai proyek aplikasi web dan mobile dengan integrasi fitur Artificial Intelligence (AI) di dalamnya.'
+      : 'Built and developed various web and mobile application projects featuring Artificial Intelligence (AI) integration.',
+    tech: ['React', 'Next.js', 'AI Integration', 'Node.js'],
   },
   {
-    company: 'Digital Agency Co.',
-    role: lang === 'id' ? 'Pengembang Frontend' : 'Frontend Developer',
-    period: '2023 — 2024',
-    description: lang === 'id' ? 'Membangun aplikasi web responsif dan halaman landas (landing pages) untuk klien tingkat perusahaan. Memperkenalkan pustaka komponen dan sistem desain.' : 'Built responsive web applications and landing pages for enterprise clients. Introduced component libraries and design systems.',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Laravel'],
-  },
-  {
-    company: 'IoT Startup Lab',
-    role: 'IoT Engineer',
-    period: '2022 — 2023',
-    description: lang === 'id' ? 'Merancang dan membuat prototipe solusi IoT untuk pertanian pintar dan pemantauan lingkungan. Memprogram sistem tertanam dan membangun dashboard cloud.' : 'Designed and prototyped IoT solutions for smart agriculture and environmental monitoring. Programmed embedded systems and built cloud dashboards.',
-    tech: ['Arduino', 'ESP32', 'STM32', 'Node.js'],
-  },
+    company: 'PTPN I Regional 2 (Bandung)',
+    role: lang === 'id' ? 'Intern Software Engineer' : 'Software Engineer Intern',
+    period: '2025',
+    description: lang === 'id' 
+      ? 'Mengembangkan visualisasi data interaktif menggunakan Looker Studio dan SQL dari data JSON. Merancang dan mendeploy Chatbot AI berbasis WhatsApp menggunakan N8N dan model AI Google Gemini untuk memudahkan pekerja lapangan dalam memantau kondisi perkebunan secara praktis dan real-time.' 
+      : 'Developed interactive data visualizations using Looker Studio and SQL from JSON data. Designed and deployed a WhatsApp-based AI Chatbot using N8N and Google Gemini AI model to help field workers easily monitor plantation conditions in real-time.',
+    tech: ['SQL', 'Looker Studio', 'N8N', 'Google Gemini', 'WhatsApp API'],
+  }
 ];
 
 export const getCertificates = (lang: 'en' | 'id'): Certificate[] => [
   {
-    name: 'AWS Certified Solutions Architect',
-    issuer: 'Amazon Web Services',
-    date: '2024',
-    link: '#',
-  },
-  {
-    name: 'Full Stack Web Development',
-    issuer: 'freeCodeCamp',
-    date: '2023',
-    link: '#',
-  },
-  {
-    name: 'Go: The Complete Developer Guide',
+    name: 'Webservices API Testing with Postman - Complete Guide',
     issuer: 'Udemy',
-    date: '2023',
-    link: '#',
+    date: 'July 2025',
+    link: '/certificate/UC-8303e0cd-4d86-487a-a760-2f0259044ebb.pdf',
+    tech: 'Postman',
   },
   {
-    name: 'IoT Specialization',
-    issuer: 'Coursera',
-    date: '2022',
-    link: '#',
-  },
-  {
-    name: 'React — The Complete Guide',
+    name: 'Web Development Bootcamp | Python Django Web Course',
     issuer: 'Udemy',
-    date: '2022',
-    link: '#',
+    date: 'July 2025',
+    link: '/certificate/UC-f2d0a18f-7444-46a0-b64f-a98eb7fcc325.pdf',
+    tech: 'Django',
   },
+  {
+    name: 'Kali Linux for Ethical Hackers',
+    issuer: 'Udemy',
+    date: 'July 2025',
+    link: '/certificate/UC-c11bfbdf-e346-4be2-8fd6-c692b3d9d620.pdf',
+    tech: 'Kali Linux',
+  },
+  {
+    name: 'Python from Zero-to-Hero (Beginner Level)',
+    issuer: 'Udemy',
+    date: 'July 2025',
+    link: '/certificate/UC-b9b871b9-ad2a-4bea-9319-d14b87a33c91.pdf',
+    tech: 'Python',
+  },
+  {
+    name: 'Master SQL with BigQuery using AI tools - From Zero to Hero',
+    issuer: 'Udemy',
+    date: 'July 2025',
+    link: '/certificate/UC-94dbd7b4-6645-43ca-bea8-ff5a8893ded1.pdf',
+    tech: 'SQL',
+  },
+  {
+    name: 'Gmail Complete Course: 25+ Google email Techniques',
+    issuer: 'Udemy',
+    date: 'July 2025',
+    link: '/certificate/UC-f9205e57-cdd5-43be-b5f0-4b2b1a5f9140.pdf',
+    tech: 'Google',
+  }
 ];

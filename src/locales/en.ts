@@ -26,7 +26,7 @@ export const en = {
       role: 'Full-Stack Software Engineer',
       headline: 'Este.Corp',
       subheadline: 'Starting from the first prompt.',
-      description: 'I focus on software development using the JavaScript ecosystem (Next.js, React, Node.js, Vue). I have a strong interest in the Internet of Things (Raspberry Pi) and implementing AI (YOLO) into applied systems.',
+      description: 'I focus on software development using the JavaScript ecosystem (Next.js, React, Node.js, Vue).',
       cta1: 'View Projects',
       cta2: 'Contact Me'
     },

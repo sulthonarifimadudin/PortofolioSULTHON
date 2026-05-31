@@ -26,11 +26,27 @@ export function ContactCreator() {
         </p>
 
         {/* Form */}
-        <form className="space-y-6 text-left" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-6 text-left" onSubmit={(e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget);
+          const name = formData.get('name');
+          const email = formData.get('email');
+          const type = formData.get('type');
+          const message = formData.get('message');
+          
+          // Ganti dengan nomor WhatsApp tujuan (gunakan kode negara 62)
+          const waNumber = '6281515964494'; 
+          const text = `Halo mas Sulthon! Saya ${name} (${email}).\n\nSaya tertarik dengan layanan: *${type}*.\n\nDetail Pesan:\n${message}`;
+          const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+          
+          window.open(waUrl, '_blank');
+        }}>
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label className="mb-2 block font-heading text-sm font-bold text-foreground">{t.common.name}</label>
               <input
+                name="name"
+                required
                 type="text"
                 placeholder={lang === 'id' ? 'Nama Anda' : 'Your name'}
                 className="w-full border-b border-gray-300 bg-transparent px-0 py-3 font-sans text-sm outline-none transition-colors focus:border-[#7d562d]"
@@ -39,6 +55,8 @@ export function ContactCreator() {
             <div>
               <label className="mb-2 block font-heading text-sm font-bold text-foreground">{t.common.email}</label>
               <input
+                name="email"
+                required
                 type="email"
                 placeholder="your@email.com"
                 className="w-full border-b border-gray-300 bg-transparent px-0 py-3 font-sans text-sm outline-none transition-colors focus:border-[#7d562d]"
@@ -48,19 +66,23 @@ export function ContactCreator() {
           <div>
             <label className="mb-2 block font-heading text-sm font-bold text-foreground">Project Type</label>
             <select
+              name="type"
+              required
               className="w-full border-b border-gray-300 bg-transparent px-0 py-3 font-sans text-sm outline-none transition-colors focus:border-[#7d562d]"
             >
               <option value="">{lang === 'id' ? 'Pilih layanan' : 'Select a service'}</option>
-              <option value="wedding">{lang === 'id' ? 'Fotografi Acara' : 'Event Photography'}</option>
-              <option value="portrait">{lang === 'id' ? 'Sesi Potret' : 'Portrait Session'}</option>
-              <option value="commercial">{lang === 'id' ? 'Fotografi Komersial' : 'Commercial Photography'}</option>
-              <option value="video">{lang === 'id' ? 'Videografi' : 'Videography'}</option>
-              <option value="other">{lang === 'id' ? 'Lainnya' : 'Other'}</option>
+              <option value="Event Photography">{lang === 'id' ? 'Fotografi Acara' : 'Event Photography'}</option>
+              <option value="Portrait Session">{lang === 'id' ? 'Sesi Potret' : 'Portrait Session'}</option>
+              <option value="Commercial Photography">{lang === 'id' ? 'Fotografi Komersial' : 'Commercial Photography'}</option>
+              <option value="Videography">{lang === 'id' ? 'Videografi' : 'Videography'}</option>
+              <option value="Other">{lang === 'id' ? 'Lainnya' : 'Other'}</option>
             </select>
           </div>
           <div>
             <label className="mb-2 block font-heading text-sm font-bold text-foreground">{t.common.message}</label>
             <textarea
+              name="message"
+              required
               rows={4}
               placeholder={lang === 'id' ? 'Ceritakan tentang visi Anda...' : 'Tell me about your vision...'}
               className="w-full resize-none border-b border-gray-300 bg-transparent px-0 py-3 font-sans text-sm outline-none transition-colors focus:border-[#7d562d]"

@@ -93,10 +93,10 @@ export function ProjectsIoT() {
                   </div>
                 </SheetTrigger>
                 
-                <SheetContent className="w-full sm:!w-[600px] sm:!max-w-[600px] lg:!w-[700px] lg:!max-w-[700px] overflow-y-auto border-l border-border/50 bg-background/95 backdrop-blur-xl p-6 sm:p-10">
+                <SheetContent className="w-full sm:!w-[600px] sm:!max-w-[600px] lg:!w-[700px] lg:!max-w-[700px] overflow-y-auto border-l-0 bg-gradient-to-br from-primary to-accent text-primary-foreground p-6 sm:p-10 shadow-2xl">
                   <SheetHeader className="mb-6 text-left">
-                    <SheetTitle className="text-3xl font-black">{project.title}</SheetTitle>
-                    <SheetDescription className="text-base mt-3 leading-relaxed text-muted-foreground">
+                    <SheetTitle className="text-3xl font-black text-white">{project.title}</SheetTitle>
+                    <SheetDescription className="text-base mt-3 leading-relaxed text-primary-foreground/90">
                       {project.description}
                     </SheetDescription>
                   </SheetHeader>
@@ -126,12 +126,12 @@ export function ProjectsIoT() {
                   </div>
 
                   <div className="mb-8">
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Tech Stack</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-primary-foreground/80 mb-4">Tech Stack</h4>
                     <div className="flex flex-wrap gap-2.5">
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1.5 text-sm font-semibold text-primary"
+                          className="flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-sm font-bold text-primary shadow-sm"
                         >
                           <TechIcon name={t} size={14} className="opacity-100" />
                           {t}
@@ -140,18 +140,7 @@ export function ProjectsIoT() {
                     </div>
                   </div>
 
-                  {project.github && (
-                    <div className="flex gap-4">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 rounded-full border border-border bg-background px-4 py-3 text-sm font-bold hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm hover:shadow-md"
-                      >
-                        <GithubIcon size={18} /> Source Code
-                      </a>
-                    </div>
-                  )}
+
                 </SheetContent>
               </Sheet>
             </StaggerItem>

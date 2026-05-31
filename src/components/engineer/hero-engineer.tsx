@@ -5,6 +5,8 @@ import { ArrowDown, FileDown, Code2, Sparkles } from 'lucide-react';
 import { SectionWrapper } from '@/components/section-wrapper';
 import Image from 'next/image';
 import { useTranslation } from '@/hooks/use-translation';
+import { GithubIcon, LinkedinIcon } from '@/components/ui/brand-icons';
+import { TechIcon } from '@/components/ui/tech-icon';
 
 export function HeroEngineer() {
   const { t } = useTranslation();
@@ -44,13 +46,28 @@ export function HeroEngineer() {
 
             {/* Subtitle */}
             <motion.p
-              className="mb-10 max-w-xl text-lg text-muted-foreground sm:text-xl"
+              className="mb-6 max-w-xl text-lg text-muted-foreground sm:text-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               {t.engineer.hero.description}
             </motion.p>
+
+            {/* Social Links */}
+            <motion.div 
+              className="mb-10 flex items-center gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+            >
+              <a href="https://github.com/arifsulthaan" target="_blank" rel="noreferrer" className="group flex h-12 w-12 items-center justify-center rounded-full glass border border-primary/10 hover:bg-primary/10 transition-all hover:scale-110">
+                <GithubIcon className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors" />
+              </a>
+              <a href="https://linkedin.com/in/sulthon-arif-imadudin" target="_blank" rel="noreferrer" className="group flex h-12 w-12 items-center justify-center rounded-full glass border border-primary/10 hover:bg-primary/10 transition-all hover:scale-110">
+                <LinkedinIcon className="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors" />
+              </a>
+            </motion.div>
 
             {/* CTAs */}
             <motion.div
@@ -65,10 +82,6 @@ export function HeroEngineer() {
               >
                 {t.engineer.hero.cta1}
                 <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
-              </button>
-              <button className="flex items-center justify-center gap-2 rounded-xl glass px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:bg-primary/5">
-                <FileDown size={16} />
-                CV
               </button>
             </motion.div>
           </div>
@@ -124,8 +137,8 @@ export function HeroEngineer() {
               animate={{ y: [-10, 10, -10] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
             >
-              <div className="glass rounded-2xl p-4 shadow-lg backdrop-blur-xl border border-white/20 dark:border-white/10">
-                <span className="text-2xl drop-shadow-md">⚛️</span>
+              <div className="glass rounded-2xl p-4 shadow-lg backdrop-blur-xl border border-white/20 dark:border-white/10 group cursor-default">
+                <TechIcon name="React" size={32} />
               </div>
             </motion.div>
             <motion.div
@@ -133,8 +146,8 @@ export function HeroEngineer() {
               animate={{ y: [10, -10, 10] }}
               transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
             >
-              <div className="glass rounded-2xl p-4 shadow-lg backdrop-blur-xl border border-white/20 dark:border-white/10">
-                <span className="text-2xl drop-shadow-md">🔧</span>
+              <div className="glass rounded-2xl p-4 shadow-lg backdrop-blur-xl border border-white/20 dark:border-white/10 group cursor-default">
+                <TechIcon name="Next.js" size={32} />
               </div>
             </motion.div>
           </motion.div>

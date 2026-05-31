@@ -28,7 +28,7 @@ export const id: Translation = {
       role: 'Full-Stack Software Engineer',
       headline: 'Este.Corp',
       subheadline: 'Mulai dari prompt pertama.',
-      description: 'Saya berfokus pada pengembangan perangkat lunak menggunakan ekosistem JavaScript (Next.js, React, Node.js, Vue). Memiliki minat yang kuat dalam Internet of Things (Raspberry Pi) dan implementasi AI (YOLO) ke dalam sistem terapan.',
+      description: 'Saya berfokus pada pengembangan perangkat lunak menggunakan ekosistem JavaScript (Next.js, React, Node.js, Vue).',
       cta1: 'Lihat Proyek',
       cta2: 'Hubungi Saya'
     },
