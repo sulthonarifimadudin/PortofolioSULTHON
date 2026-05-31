@@ -22,6 +22,7 @@ const authenticSignature = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://este.my.id"),
   title: "Sulthon | Engineer × Creator — Portfolio",
   description:
     "Full-stack developer & creative photographer/videographer. Building Digital Experiences. Capturing Visual Stories. Portfolio of software engineering, IoT projects, photography, and videography.",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     title: "Sulthon | Engineer × Creator",
     description: "Building Digital Experiences. Capturing Visual Stories.",
     type: "website",
-    url: "https://sulthon.vercel.app",
+    url: "https://este.my.id",
     siteName: "Sulthon Portfolio",
     images: [
       {
