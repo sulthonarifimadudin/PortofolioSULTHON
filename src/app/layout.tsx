@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Sulthon Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Sulthon | Engineer × Creator",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sulthon | Engineer × Creator",
     description: "Building Digital Experiences. Capturing Visual Stories.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
