@@ -39,6 +39,22 @@ export const metadata: Metadata = {
     title: "Sulthon | Engineer × Creator",
     description: "Building Digital Experiences. Capturing Visual Stories.",
     type: "website",
+    url: "https://sulthon.vercel.app",
+    siteName: "Sulthon Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sulthon | Engineer × Creator",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sulthon | Engineer × Creator",
+    description: "Building Digital Experiences. Capturing Visual Stories.",
+    images: ["/og-image.png"],
   },
 };
 
