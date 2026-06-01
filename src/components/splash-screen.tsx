@@ -38,42 +38,48 @@ export default function SplashScreen() {
         >
           <div className="flex flex-col items-center overflow-hidden">
             <motion.div
+              layout
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-              className="flex items-end gap-1 md:gap-2 h-[60px] md:h-[80px]"
+              className="flex items-end justify-center h-[60px] md:h-[80px]"
             >
-              <h1 className="text-4xl md:text-6xl font-heading font-black tracking-widest text-white leading-none flex">
+              <motion.h1 
+                layout
+                className="text-4xl md:text-6xl font-heading font-black tracking-widest text-white leading-none flex"
+              >
                 Este<span className="text-[#a992fd]">.</span>
-              </h1>
+              </motion.h1>
               
-              <div className="relative w-[180px] md:w-[320px] h-full flex items-end justify-start">
-                <AnimatePresence mode="wait">
+              <motion.div layout className="flex items-end justify-start ml-1 md:ml-2 h-full">
+                <AnimatePresence mode="popLayout">
                   {textStage === 'corp' ? (
                     <motion.span
                       key="corp"
+                      layout
                       initial={{ y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       exit={{ y: -20, opacity: 0, filter: "blur(4px)" }}
                       transition={{ duration: 0.4 }}
-                      className="text-4xl md:text-6xl font-heading font-black text-white/80 leading-none absolute bottom-0 left-0"
+                      className="text-4xl md:text-6xl font-heading font-black text-white/80 leading-none whitespace-nowrap inline-block"
                     >
                       Corp
                     </motion.span>
                   ) : (
                     <motion.span
                       key="photograph"
+                      layout
                       initial={{ y: 20, opacity: 0, filter: "blur(4px)" }}
                       animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                       exit={{ y: -20, opacity: 0 }}
                       transition={{ duration: 0.5 }}
-                      className="text-5xl md:text-7xl font-script text-[#aa867c] leading-none absolute bottom-[-10px] md:bottom-[-15px] left-0"
+                      className="text-5xl md:text-7xl font-script text-[#aa867c] leading-none whitespace-nowrap inline-block translate-y-[5px] md:translate-y-[8px]"
                     >
                       Photograph
                     </motion.span>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Loading Bar */}
