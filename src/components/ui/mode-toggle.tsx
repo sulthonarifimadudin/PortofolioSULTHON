@@ -18,7 +18,7 @@ export function ModeToggle() {
           : 'linear-gradient(135deg, oklch(0.95 0.01 270), oklch(0.92 0.02 260))',
         border: `1px solid ${isCreator ? 'oklch(0.35 0.03 55)' : 'oklch(0.85 0.02 270)'}`,
       }}
-      aria-label={`Switch to ${isCreator ? 'Engineer' : 'Creator'} mode`}
+      aria-label={`Switch to ${isCreator ? 'Engineer' : 'Photographer'} mode`}
     >
       <div className="relative flex items-center">
         {/* Icons */}

@@ -31,7 +31,7 @@ export function Footer() {
             <p className="text-lg font-bold tracking-tight">
               <span className="gradient-text">Engineer</span>
               <span className="mx-2 text-muted-foreground">×</span>
-              <span className={`${isCreator ? 'font-serif' : ''}`}>Creator</span>
+              <span className={`${isCreator ? 'font-serif' : ''}`}>Photographer</span>
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               Building Digital Experiences. Capturing Visual Stories.

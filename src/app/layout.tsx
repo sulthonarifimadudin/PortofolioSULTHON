@@ -23,7 +23,7 @@ const authenticSignature = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://este.my.id"),
-  title: "Sulthon | Engineer × Creator — Portfolio",
+  title: "Sulthon | Engineer × Photographer — Portfolio",
   description:
     "Full-stack developer & creative photographer/videographer. Building Digital Experiences. Capturing Visual Stories. Portfolio of software engineering, IoT projects, photography, and videography.",
   keywords: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "React",
   ],
   openGraph: {
-    title: "Sulthon | Engineer × Creator",
+    title: "Sulthon | Engineer × Photographer",
     description: "Building Digital Experiences. Capturing Visual Stories.",
     type: "website",
     url: "https://este.my.id",
@@ -47,17 +47,19 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Sulthon | Engineer × Creator",
+        alt: "Sulthon | Engineer × Photographer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sulthon | Engineer × Creator",
+    title: "Sulthon | Engineer × Photographer",
     description: "Building Digital Experiences. Capturing Visual Stories.",
     images: ["/og-image.jpg"],
   },
 };
+
+import SplashScreen from "@/components/splash-screen";
 
 export default function RootLayout({
   children,
@@ -80,6 +82,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
+        <SplashScreen />
         {/* Page Content */}
         <div className="relative z-0 flex flex-col flex-1">
           {children}
