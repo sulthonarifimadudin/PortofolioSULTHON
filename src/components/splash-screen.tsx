@@ -34,7 +34,7 @@ export default function SplashScreen() {
             y: "-100%", // Animasi naik ke atas saat selesai
             transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
           }}
-          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#050505]"
+          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#18120d]"
         >
           <div className="flex flex-col items-center overflow-hidden">
             <motion.div
