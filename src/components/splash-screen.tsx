@@ -5,10 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     // Sembunyikan splash screen setelah 2 detik
     const timer = setTimeout(() => {
       setIsVisible(false);
@@ -16,8 +14,6 @@ export default function SplashScreen() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  if (!isMounted) return null;
 
   return (
     <AnimatePresence>
