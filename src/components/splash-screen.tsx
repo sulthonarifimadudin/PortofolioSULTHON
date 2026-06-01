@@ -5,14 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
+  const [textStage, setTextStage] = useState<'corp' | 'photograph'>('corp');
 
   useEffect(() => {
-    // Sembunyikan splash screen setelah 2 detik
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 2000);
+    // Ganti teks setelah 1.2 detik
+    const swapTimer = setTimeout(() => {
+      setTextStage('photograph');
+    }, 1200);
 
-    return () => clearTimeout(timer);
+    // Sembunyikan splash screen setelah 3.2 detik
+    const exitTimer = setTimeout(() => {
+      setIsVisible(false);
+    }, 3200);
+
+    return () => {
+      clearTimeout(swapTimer);
+      clearTimeout(exitTimer);
+    };
   }, []);
 
   return (
@@ -29,25 +38,50 @@ export default function SplashScreen() {
         >
           <div className="flex flex-col items-center overflow-hidden">
             <motion.div
-              initial={{ y: 100, opacity: 0 }}
+              initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-              className="flex items-center gap-2"
+              className="flex items-end gap-1 md:gap-2 h-[60px] md:h-[80px]"
             >
-              <h1 className="text-4xl md:text-6xl font-heading font-black tracking-widest text-white">
-                ESTE
+              <h1 className="text-4xl md:text-6xl font-heading font-black tracking-widest text-white leading-none flex">
+                Este<span className="text-[#a992fd]">.</span>
               </h1>
-              <span className="text-4xl md:text-6xl font-heading font-black text-[#a992fd]">
-                .
-              </span>
+              
+              <div className="relative w-[180px] md:w-[320px] h-full flex items-end justify-start">
+                <AnimatePresence mode="wait">
+                  {textStage === 'corp' ? (
+                    <motion.span
+                      key="corp"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -20, opacity: 0, filter: "blur(4px)" }}
+                      transition={{ duration: 0.4 }}
+                      className="text-4xl md:text-6xl font-heading font-black text-white/80 leading-none absolute bottom-0 left-0"
+                    >
+                      Corp
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="photograph"
+                      initial={{ y: 20, opacity: 0, filter: "blur(4px)" }}
+                      animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                      exit={{ y: -20, opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="text-5xl md:text-7xl font-script text-[#aa867c] leading-none absolute bottom-[-10px] md:bottom-[-15px] left-0"
+                    >
+                      Photograph
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </div>
             </motion.div>
 
             {/* Loading Bar */}
             <motion.div
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: "100%", opacity: 1 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }}
-              className="h-[2px] bg-gradient-to-r from-[#a992fd] to-blue-500 mt-6 rounded-full"
+              transition={{ duration: 2.2, delay: 0.4, ease: "easeInOut" }}
+              className="h-[2px] bg-gradient-to-r from-[#a992fd] to-[#aa867c] mt-8 rounded-full"
               style={{ width: "0%" }}
             />
             
